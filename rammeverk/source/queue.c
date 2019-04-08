@@ -76,7 +76,7 @@ int stop_at_floor(int floor_numb){
 int continue_dir(){
 	int ans=0;
 	if (prev_dir > 0){
-		for (int c = (floor_nr*4+1); c<12; c++){
+		for (int c = (floor_nr*3+3); c<12; c++){
 			if (task_array[c]){
 				ans = 1;
 			}
@@ -139,7 +139,7 @@ int stop_when_change_dir(){
 }
 
 void change_floor_nr(){
-	printf("flag");
+	printf("flag\n");
 	if (prev_dir==1){
 		floor_nr++;
 		//printf("++\n");
