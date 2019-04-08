@@ -1,16 +1,9 @@
-//#pragma once
-
 #include "elev.h"
-//#include "elevController.h"
-
-
-
-// {01, 01 up, 01 down, 02, 02 up, 02 down, 03, 03 up, 03 down, 04, 04 up, 04 down} //Set all elements to 0
 
 
 
 //Checking elevator buttons. Calling add_task if active. Must be in loop.
-void check_buttons();
+void check_buttons_and_add_tasks();
 
 //Add task to task_array
 void add_task(int button, int floor);
@@ -30,35 +23,23 @@ int continue_dir();
 //return 1 if task in task_array, 0 otherwise;
 int is_there_task();
 
+//setter variabelen prev_dir til input dir.
 void set_prev_dir(int dir);
 
+//returnerer variabelen prev_dir.
 int get_prev_dir();
 
+//Reverserer prev_dir. Dvs. prev_dir = -prev_dir
 void change_dir();
 
+//setter variabelen floor_nr til input floor.
 void set_floor_nr(int floor);
 
+//Returnerer variabelen floor_nr
 int get_floor_nr();
 
+//Printer task array med tab mellom alle elementer.
 void print_task_array();
 
-int stop_when_change_dir();
-
+//Tilpasser floor_nr etter stopp mellom etasjer
 void change_floor_nr();
-
-/*enum task_buttons{
-  FlOOR_1,
-  UP_1,
-  DOWN_1,
-  FlOOR_2,
-  UP_2,
-  DOWN_2,
-  FlOOR_3,
-  UP_3,
-  DOWN_3,
-  FlOOR_4,
-  UP_4,
-  DOWN_4
-};*/
-
-

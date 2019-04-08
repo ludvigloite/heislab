@@ -8,10 +8,6 @@ void start_timer(){
 }
 
 int timer_expired(){
-	//printf("time end: %ld\n",time_end);
-	//printf("time now: %ld\n",time(NULL));
-	//printf("returns: %d\n",time_end <= time(NULL));
-	
 	return (time_end <= time(NULL));
 }
 

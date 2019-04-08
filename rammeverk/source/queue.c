@@ -1,28 +1,23 @@
 #include "queue.h"
 #include <stdio.h>
 
-//Har en del kommentarer til denne filen på gitbhub
+
 // {01, 01 up, 01 down, 02, 02 up, 02 down, 03, 03 up, 03 down, 04, 04 up, 04 down} //Set all elements to 0
-int task_array[12]={}; //bytte om på rekkefølgen??
+int task_array[12]={};
 int prev_dir; 
 int floor_nr;
 
-void check_buttons(){
-	for (int floor=0; floor<4; floor++){
-		for (int button=0; button<3; button++){
-			if ((button == 0 && floor == 3) || (button==1 && floor==0)){
+void check_buttons_and_add_tasks(){
+	for (int floor = 0; floor < 4; floor++){
+		for (int button = 0; button < 3; button++){
+			if ((button == 0 && floor == 3) || (button == 1 && floor == 0)){
 				continue;
 			}
 			else if (elev_get_button_signal(button,floor)){
-				//legg til i task_array
 				add_task(button,floor);
-				//printf("task added at %d\n",floor);
 			}
 		}
 	}
-
-
-
 }
 
 void add_task(int button, int floor){
@@ -37,10 +32,10 @@ void remove_tasks_at_floor(int floor){
 	if (floor!=-1){
 		for (int c = 0; c<3; c++){
 			task_array[floor*3+c]=0;
+
 			if (!((c==0 && floor ==3) || (c==1 && floor==0))){
-			elev_set_button_lamp(c,floor,0);
-			}
-			
+				elev_set_button_lamp(c,floor,0);
+			}	
 		}
 	}
 }
@@ -53,10 +48,7 @@ void remove_all_tasks(){
 
 int stop_at_floor(int floor_numb){
 	if (floor_numb!=-1){
-		//printf("prev_dir: %d\n",prev_dir);
 		if(task_array[floor_numb*3]){
-			//printf("gar inn i if nr 1");
-			//printf("prev_dir: %d\n",prev_dir);
 			return 1;
 		}
 		if(prev_dir==1){
@@ -69,7 +61,6 @@ int stop_at_floor(int floor_numb){
 			}
 		}
 	}
-	//printf("ingen av setningene treffer");
 	return 0;
 }
 
@@ -81,7 +72,7 @@ int continue_dir(){
 				ans = 1;
 			}
 		}
-	}else{
+	} else{
 		for (int i = 0; i < (floor_nr*3); i++){
 			if (task_array[i]){
 				ans = 1;
@@ -128,23 +119,10 @@ void print_task_array(){
 	}printf("\n" );
 }
 
-int stop_when_change_dir(){
-	int ans = 0;
-	printf("\n\n\nfloor_nr inni stop_when_change_dir: %d\n",floor_nr);
-	for (int c = 0; c<3; c++){
-		if (task_array[floor_nr*3+c]){
-			ans = 1;
-		}
-	}return ans;
-}
-
 void change_floor_nr(){
-	printf("flag\n");
 	if (prev_dir==1){
 		floor_nr++;
-		//printf("++\n");
-	}else if (prev_dir==-1){
+	}else if (prev_dir==-1) {
 		floor_nr--;
-		//printf("--\n");
 	}
 }
