@@ -16,6 +16,7 @@ void check_buttons(){
 			else if (elev_get_button_signal(button,floor)){
 				//legg til i task_array
 				add_task(button,floor);
+				//printf("task added at %d\n",floor);
 			}
 		}
 	}
@@ -33,12 +34,16 @@ void add_task(int button, int floor){
 }
 
 void remove_tasks_at_floor(int floor){
-	for (int c = 0; c<3; c++){
-		task_array[floor*3+c]=0;
-		if (!((c==0 && floor ==3) || (c==1 && floor==0))){
-		elev_set_button_lamp(c,floor,0);
+	if (floor!=-1){
+		for (int c = 0; c<3; c++){
+			task_array[floor*3+c]=0;
+			if (!((c==0 && floor ==3) || (c==1 && floor==0))){
+				printf("floor: %d\n",floor);
+				printf("c: %d\n",c);
+			elev_set_button_lamp(c,floor,0);
+			}
+			
 		}
-		
 	}
 }
 
@@ -49,32 +54,31 @@ void remove_all_tasks(){
 }
 
 int stop_at_floor(int floor_numb){
-	printf("prev_dir: %d\n",prev_dir);
-	if(task_array[floor_numb*3]){
-		printf("gar inn i if nr 1");
-		printf("prev_dir: %d\n",prev_dir);
-		return 1;
-	}
-	if(prev_dir==1){
-		if(task_array[floor_numb*3+1]){
-			printf("gar inn i if nr 2");
-			printf("prev_dir: %d\n",prev_dir);
+	if (floor_numb!=-1){
+		//printf("prev_dir: %d\n",prev_dir);
+		if(task_array[floor_numb*3]){
+			//printf("gar inn i if nr 1");
+			//printf("prev_dir: %d\n",prev_dir);
 			return 1;
 		}
-	} else if(prev_dir==-1){
-		if(task_array[floor_numb*3+2]){
-			printf("gar inn i else");
-			printf("prev_dir: %d\n",prev_dir);
-			return 1;
+		if(prev_dir==1){
+			if(task_array[floor_numb*3+1]){
+				return 1;
+			}
+		} else if(prev_dir==-1){
+			if(task_array[floor_numb*3+2]){
+				return 1;
+			}
 		}
 	}
-	printf("ingen av setningene treffer");
+	//printf("ingen av setningene treffer");
 	return 0;
 }
 
 int continue_dir(){
+
 	int ans=0;
-	print_task_array();
+	//print_task_array();
 	if (prev_dir > 0){
 		for (int c = (floor_nr*4+1); c<12; c++){
 			if (task_array[c]){
