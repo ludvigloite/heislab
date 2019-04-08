@@ -10,12 +10,9 @@
 /*
 TING SOM MÅ FIKSES:
 
-debug følgende i gdb eller hva det het:
-	2etNED fucker seg. 
-	3etOPP fucker seg om heisen går opp mot 3 et samtidig som en knapp under er trykket(2ETOPP og 1ETOPP)
-	Ordren blir ikke fjernet ser det ut som...
-
-Er den åpen for lenge om man skal på i samme etasje som heisen står i? tror det..
+debug følgende i gdb:
+  Er den åpen for lenge om man skal på i samme etasje som heisen står i? tror det..
+  stopp midt mellom etasjer
 
 late som at vi har brukt git hele veien.
 fikse UML ordentlig
@@ -30,7 +27,7 @@ int main() {
  	
   	int state=0;
   	int floor_number=0;
-    //int count=0;
+    int stopped=0; //flag: the elevator have been stopped.
 
   	enum STATES{
   		IDLE,
@@ -55,7 +52,6 @@ int main() {
     if(floor_number >= 0){//den er på et floor
       set_floor_nr(floor_number);
     	elev_set_floor_indicator(floor_number);
-    	//printf("floor number: %d\n",floor_number);
     }
 
   	if (elev_get_stop_signal()){
@@ -93,12 +89,15 @@ int main() {
 	      		if (timer_expired()){
 
 	      			if (continue_dir()){
-                
         				elev_set_motor_direction(get_prev_dir()); 
-        				
-    					} else{
+    					}else{
+                if (stopped){
+                  change_floor_nr();
+                } 
                 printf("change dir \n");
 		        		change_dir();
+                printf("dir: %d\n",get_prev_dir());
+                printf("etg: %d\n",get_floor_nr());
                 //elev_set_motor_direction(get_prev_dir()); 
 		        	} 
             }
@@ -108,7 +107,7 @@ int main() {
 	      				start_timer();
 	      				remove_tasks_at_floor(floor_number);
 	      				state = IDLE;
-	      			} 
+	      			} stopped=0;
             
 
     			
@@ -119,6 +118,7 @@ int main() {
     			elev_set_motor_direction(DIRN_STOP);
     			remove_all_tasks();
     			elev_set_stop_lamp(1);
+          stopped=1;
 
     			if (elev_get_floor_sensor_signal()>=0){ //åpner døra hvis den er i en etasje
     				elev_set_door_open_lamp(1);
@@ -130,8 +130,6 @@ int main() {
     			while(elev_get_stop_signal()){
             //printf("%d\n",count++ );
           }
-          printf("D");
-
     			elev_set_stop_lamp(0);
     			state=IDLE;
     			if(elev_get_floor_sensor_signal()>=0){ //den står i en etasje

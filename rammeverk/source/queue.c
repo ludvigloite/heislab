@@ -38,8 +38,6 @@ void remove_tasks_at_floor(int floor){
 		for (int c = 0; c<3; c++){
 			task_array[floor*3+c]=0;
 			if (!((c==0 && floor ==3) || (c==1 && floor==0))){
-				printf("floor: %d\n",floor);
-				printf("c: %d\n",c);
 			elev_set_button_lamp(c,floor,0);
 			}
 			
@@ -76,27 +74,20 @@ int stop_at_floor(int floor_numb){
 }
 
 int continue_dir(){
-
 	int ans=0;
-	//print_task_array();
 	if (prev_dir > 0){
 		for (int c = (floor_nr*4+1); c<12; c++){
 			if (task_array[c]){
 				ans = 1;
 			}
-		}//if (task_array[floor_nr*3+1]){
-		//	ans=1;
-		//}
+		}
 	}else{
 		for (int i = 0; i < (floor_nr*3); i++){
 			if (task_array[i]){
 				ans = 1;
 			}
-		}//if (task_array[floor_nr*3+2]){
-			//ans=1;
-		//}
+		}
 	}
-	//for(int i=0;i<10000;i++){}; //delay
 	return ans;
 }
 
@@ -127,6 +118,10 @@ void set_floor_nr(int floor){
 	floor_nr = floor;
 }
 
+int get_floor_nr(){
+	return floor_nr;
+}
+
 void print_task_array(){
 	for (int c = 0; c<12; c++){
 		printf("%d\t",task_array[c]);
@@ -141,4 +136,15 @@ int stop_when_change_dir(){
 			ans = 1;
 		}
 	}return ans;
+}
+
+void change_floor_nr(){
+	printf("flag");
+	if (prev_dir==1){
+		floor_nr++;
+		//printf("++\n");
+	}else if (prev_dir==-1){
+		floor_nr--;
+		//printf("--\n");
+	}
 }

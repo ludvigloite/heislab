@@ -38,9 +38,13 @@ void change_dir();
 
 void set_floor_nr(int floor);
 
+int get_floor_nr();
+
 void print_task_array();
 
 int stop_when_change_dir();
+
+void change_floor_nr();
 
 /*enum task_buttons{
   FlOOR_1,
