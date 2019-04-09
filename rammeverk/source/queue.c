@@ -15,8 +15,6 @@ void check_buttons_and_add_tasks(){
 			}
 			else if (elev_get_button_signal(button,floor)){
 				add_task(button,floor);
-				printf("task array in check_buttons_and_add_tasks \n");
-				print_task_array();
 			}
 		}
 	}

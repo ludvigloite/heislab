@@ -10,14 +10,10 @@
 /*
 TING SOM MÅ FIKSES:
 
-debug følgende i gdb:
-  Er den åpen for lenge om man skal på i samme etasje som heisen står i? tror det..
-
 fikse UML ordentlig
 fikse dokumentasjon i Doxygen!
 
 fikse alt av godkjenninger Git, gdb.
-
 */
 
 
@@ -63,10 +59,8 @@ int main() {
   	if (elev_get_stop_signal()){
   		state = STOP;
   	} else if (is_there_task() && timer_expired()){
-      printf("STATE ACTIVE\n");
   		state = ACTIVE;
   	} else {
-      //printf("STATE IDLE\n");
   		state = IDLE;
   	}
 
@@ -84,14 +78,9 @@ int main() {
   		break;
 
   		case ACTIVE:
-      printf("print Task Array at start \n");
-      print_task_array();
         elev_set_door_open_lamp(0);
 
 				if (stop_at_floor(floor_number) && (floor_number!=-1)){
-          printf("Task array 1: \n");
-          print_task_array();
-          printf("TEST HER\n");
   				elev_set_motor_direction(DIRN_STOP);
   				elev_set_door_open_lamp(1);
           remove_tasks_at_floor(floor_number);
@@ -112,13 +101,10 @@ int main() {
         }
 
         if (stop_at_floor(floor_number) && (floor_number != -1)){
-          printf("TEST 2\n");
   				elev_set_motor_direction(DIRN_STOP);
   				elev_set_door_open_lamp(1);
   				start_timer();
-          print_task_array();
   				remove_tasks_at_floor(floor_number);
-          print_task_array();
   				state = IDLE;
   			} 
         stopped=0;
