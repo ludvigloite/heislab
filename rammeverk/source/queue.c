@@ -15,6 +15,8 @@ void check_buttons_and_add_tasks(){
 			}
 			else if (elev_get_button_signal(button,floor)){
 				add_task(button,floor);
+				printf("task array in check_buttons_and_add_tasks \n");
+				print_task_array();
 			}
 		}
 	}
@@ -64,6 +66,15 @@ int stop_at_floor(int floor_numb){
 	return 0;
 }
 
+int task_at_floor(){
+	for (int c =0; c<3; c++){
+		if (task_array[floor_nr*3+c]){
+			return 1;
+		}
+	}
+	return 0;
+}
+
 int continue_dir(){
 	int ans=0;
 	if (prev_dir > 0){
@@ -84,7 +95,7 @@ int continue_dir(){
 
 int is_there_task(){
 	for (int c =0; c<12; c++){
-		if (task_array[c]==1){
+		if (task_array[c]){
 			return 1;
 		}
 	}

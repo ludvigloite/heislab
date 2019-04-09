@@ -1,8 +1,7 @@
 #include <time.h>
 
-
+//time_t start;
 time_t time_end;
-time_t start;
 
 //starter timer, setter time_end til nåtid+3 sek
 void start_timer(); 

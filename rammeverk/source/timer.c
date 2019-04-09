@@ -3,8 +3,7 @@
 
 
 void start_timer(){
-	time_t start = time(NULL);
-	time_end = start + 3;
+	time_end = time(NULL) + 3;
 }
 
 int timer_expired(){

@@ -17,6 +17,8 @@ void remove_all_tasks();
 //return 1 if stop at floor, return 0 otherwise
 int stop_at_floor(int floor_numb);
 
+int task_at_floor();
+
 //return 1 if continue in same direction, 0 otherwise.
 int continue_dir();
 
