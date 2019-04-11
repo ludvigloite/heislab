@@ -12,6 +12,5 @@ var searchData=
   ['elev_5fset_5fdoor_5fopen_5flamp',['elev_set_door_open_lamp',['../elev_8h.html#a6ce9a34b8677b483b0d8f9dc47b42c40',1,'elev.c']]],
   ['elev_5fset_5ffloor_5findicator',['elev_set_floor_indicator',['../elev_8h.html#a6af53dd3ebae3a5791ba345eac84d4be',1,'elev.c']]],
   ['elev_5fset_5fmotor_5fdirection',['elev_set_motor_direction',['../elev_8h.html#ac7dccb879f6e812e9d245174a0214536',1,'elev.c']]],
-  ['elev_5fset_5fstop_5flamp',['elev_set_stop_lamp',['../elev_8h.html#a85de2a6536b4dd0c83bac19923500740',1,'elev.c']]],
-  ['elevcontroller_2eh',['elevController.h',['../elevController_8h.html',1,'']]]
+  ['elev_5fset_5fstop_5flamp',['elev_set_stop_lamp',['../elev_8h.html#a85de2a6536b4dd0c83bac19923500740',1,'elev.c']]]
 ];

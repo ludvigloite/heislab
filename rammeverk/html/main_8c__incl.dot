@@ -6,9 +6,9 @@ digraph "source/main.c"
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="elev.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elev_8h.html",tooltip="Module for communication with the elevator. "];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="elevController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elevController_8h.html",tooltip="Module for initializing the elevator. "];
+  Node3 [label="init.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$init_8h.html",tooltip="Module for initializing the elevator. "];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="queue.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$queue_8h.html",tooltip="Module for keeping track of tasks and modifying tasks. "];
+  Node4 [label="queue.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$queue_8h.html",tooltip="Module for keeping track of tasks and task logic. "];
   Node4 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

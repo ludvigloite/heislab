@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Heisprosjekt gruppe 57: source/main.c File Reference</title>
+<title>Heisprosjekt gruppe 57: source/init.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,34 +86,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">main.c File Reference</div>  </div>
+<div class="title">init.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>main  
+<p>Module for initializing the elevator.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="elev_8h_source.html">elev.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="init_8h_source.html">init.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="queue_8h_source.html">queue.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="queue_8h_source.html">queue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="elev_8h_source.html">elev.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="timer_8h_source.html">timer.h</a>&quot;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for main.c:</div>
+Include dependency graph for init.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="main_8c__incl.png" border="0" usemap="#source_2main_8c" alt=""/></div>
+<div class="center"><img src="init_8h__incl.png" border="0" usemap="#source_2init_8h" alt=""/></div>
 <!-- MAP 0 -->
 </div>
-</div><table class="memberdecls">
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="init_8h__dep__incl.png" border="0" usemap="#source_2init_8hdep" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+</div>
+<p><a href="init_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1012fd9572f75e0bd48c10a12bff464"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="init_8h.html#af1012fd9572f75e0bd48c10a12bff464">floor_init</a> ()</td></tr>
+<tr class="memdesc:af1012fd9572f75e0bd48c10a12bff464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the elevator is at a floor. If not, move down until the elevator is at a floor.  <a href="#af1012fd9572f75e0bd48c10a12bff464">More...</a><br /></td></tr>
+<tr class="separator:af1012fd9572f75e0bd48c10a12bff464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb4bd9dcb1f0f2250c8e03870b7439c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="init_8h.html#a3bb4bd9dcb1f0f2250c8e03870b7439c">init_total_elev</a> ()</td></tr>
+<tr class="memdesc:a3bb4bd9dcb1f0f2250c8e03870b7439c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialising the elevator. Calls <code>elev_init</code>, <code>floor_init</code> and <code>timer_init</code>. The elevator ends up at a defined state, where we know what floor it is at.  <a href="#a3bb4bd9dcb1f0f2250c8e03870b7439c">More...</a><br /></td></tr>
+<tr class="separator:a3bb4bd9dcb1f0f2250c8e03870b7439c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>main </p>
-</div></div><!-- contents -->
+<div class="textblock"><p>Module for initializing the elevator. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="af1012fd9572f75e0bd48c10a12bff464"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int floor_init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the elevator is at a floor. If not, move down until the elevator is at a floor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">prev_dir</td><td>Previous direction.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on succes. 0 otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3bb4bd9dcb1f0f2250c8e03870b7439c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int init_total_elev </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialising the elevator. Calls <code>elev_init</code>, <code>floor_init</code> and <code>timer_init</code>. The elevator ends up at a defined state, where we know what floor it is at. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 on succes. 0 otherwise. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

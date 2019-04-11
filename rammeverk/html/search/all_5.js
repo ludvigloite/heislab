@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['init_5ftotal_5felev',['init_total_elev',['../elevController_8h.html#a3bb4bd9dcb1f0f2250c8e03870b7439c',1,'elevController.c']]],
+  ['init_2eh',['init.h',['../init_8h.html',1,'']]],
+  ['init_5ftotal_5felev',['init_total_elev',['../init_8h.html#a3bb4bd9dcb1f0f2250c8e03870b7439c',1,'init.c']]],
   ['io_2eh',['io.h',['../io_8h.html',1,'']]],
   ['io_5fclear_5fbit',['io_clear_bit',['../io_8h.html#a97951257634a0778b858a4ced7558f81',1,'io.c']]],
   ['io_5finit',['io_init',['../io_8h.html#a12ce98b64f2019ac45b44826a4db7ec9',1,'io.c']]],

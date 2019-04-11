@@ -4,7 +4,7 @@
 */
 
 #include "elev.h"
-#include "elevController.h"
+#include "init.h"
 #include "queue.h"
 #include "timer.h"
 #include <stdio.h>
