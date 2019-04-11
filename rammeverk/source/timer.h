@@ -1,16 +1,13 @@
 /**
 * @file
-* @brief A simple library for doing operations on memory
-* buffers consisting of integers
+* @brief Module for the timer and the timer logic.
 */
 
 
 #include <time.h>
 
-//time_t start;
 time_t time_end;
 
-//starter timer, setter time_end til nåtid+3 sek
 /**
 * @brief Set @p time_end to 3 seconds from the current time.
 *
@@ -18,7 +15,6 @@ time_t time_end;
 */
 void start_timer(); 
 
-//gir ut 1 om nåtid er større enn time_end, altså at tiden er gått ut.
 /**
 * @brief Check if the current time is greater than, or equal to @p time_end.
 *
@@ -28,7 +24,6 @@ void start_timer();
 */
 int timer_expired();
 
-//setter time_end til nåtid. Gjør at timer_expired gir 1 helt til start_timer blir kalt og ny end_time settes
 /**
 * @brief Set @p time_end to current time.
 *

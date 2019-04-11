@@ -1,0 +1,326 @@
+\hypertarget{queue_8h}{}\section{source/queue.h File Reference}
+\label{queue_8h}\index{source/queue.\+h@{source/queue.\+h}}
+
+
+Module for keeping track of tasks and modifying tasks.  
+
+
+{\ttfamily \#include \char`\"{}elev.\+h\char`\"{}}\\*
+Include dependency graph for queue.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{queue_8h_a1c0677670085fd2ccdb7f472d3ff140d}{check\+\_\+buttons\+\_\+and\+\_\+add\+\_\+tasks} ()
+\begin{DoxyCompactList}\small\item\em Check elevator buttons. Calling {\ttfamily \hyperlink{queue_8h_a7e8b321b568c225ff89208d2fdf5e46b}{add\+\_\+task()}} if active. \end{DoxyCompactList}\item 
+void \hyperlink{queue_8h_a7e8b321b568c225ff89208d2fdf5e46b}{add\+\_\+task} (int button, int floor)
+\begin{DoxyCompactList}\small\item\em Add task to {\ttfamily task\+\_\+array}. Being used in {\ttfamily \hyperlink{queue_8h_a1c0677670085fd2ccdb7f472d3ff140d}{check\+\_\+buttons\+\_\+and\+\_\+add\+\_\+tasks()}}. \end{DoxyCompactList}\item 
+void \hyperlink{queue_8h_afd2439d4234c24ac3550d429378f2c3d}{remove\+\_\+tasks\+\_\+at\+\_\+floor} (int floor)
+\begin{DoxyCompactList}\small\item\em Remove all tasks at certain floor from {\ttfamily task\+\_\+array}. \end{DoxyCompactList}\item 
+void \hyperlink{queue_8h_ac42ac5b8cfc41aec536ff59619ddf448}{remove\+\_\+all\+\_\+tasks} ()
+\begin{DoxyCompactList}\small\item\em Remove all tasks in {\ttfamily task\+\_\+array}, by setting the elements to 0. \end{DoxyCompactList}\item 
+int \hyperlink{queue_8h_a8abae8e750bef901dff7d007d5b460b1}{stop\+\_\+at\+\_\+floor} (int floor\+\_\+numb)
+\begin{DoxyCompactList}\small\item\em Determine if the elevator have to stop at a given floor. \end{DoxyCompactList}\item 
+int \hyperlink{queue_8h_ad3458686a338b0a5e1aa28a087fcd1fa}{task\+\_\+at\+\_\+floor} ()
+\begin{DoxyCompactList}\small\item\em Are there any tasks on the floor. \end{DoxyCompactList}\item 
+int \hyperlink{queue_8h_a137b26aacc4a64a506e45efa8f942754}{continue\+\_\+dir} ()
+\begin{DoxyCompactList}\small\item\em Determine the direction of the elevator. \end{DoxyCompactList}\item 
+int \hyperlink{queue_8h_a5421b51bf8e1ea44f3fbe79fb5f48a82}{is\+\_\+there\+\_\+task} ()
+\begin{DoxyCompactList}\small\item\em Determine if there are any tasks in {\ttfamily task\+\_\+array}. \end{DoxyCompactList}\item 
+void \hyperlink{queue_8h_a727673b7363d8564b435ab8186eea7e3}{set\+\_\+prev\+\_\+dir} (int dir)
+\begin{DoxyCompactList}\small\item\em Set function for {\ttfamily prev\+\_\+dir}. \end{DoxyCompactList}\item 
+int \hyperlink{queue_8h_a923a714ea188455304b44f66af04dba4}{get\+\_\+prev\+\_\+dir} ()
+\begin{DoxyCompactList}\small\item\em Get function for {\ttfamily prev\+\_\+dir}. \end{DoxyCompactList}\item 
+void \hyperlink{queue_8h_a960dbfe914856306cd3143f297ea101c}{change\+\_\+dir} ()
+\begin{DoxyCompactList}\small\item\em Reverse {\ttfamily prev\+\_\+dir}. \end{DoxyCompactList}\item 
+void \hyperlink{queue_8h_a9c94a3c265ef73681171a20500b07feb}{set\+\_\+floor\+\_\+nr} (int floor)
+\begin{DoxyCompactList}\small\item\em Set function for {\ttfamily floor\+\_\+nr}. \end{DoxyCompactList}\item 
+int \hyperlink{queue_8h_a2ab1d7cd022fc0ac5b93ee94264998bd}{get\+\_\+floor\+\_\+nr} ()
+\begin{DoxyCompactList}\small\item\em Get function for {\ttfamily floor\+\_\+nr}. \end{DoxyCompactList}\item 
+void \hyperlink{queue_8h_a9736d1517a32583f72bb19a81715d23e}{print\+\_\+task\+\_\+array} ()
+\begin{DoxyCompactList}\small\item\em Print task array with tab between elements. \end{DoxyCompactList}\item 
+void \hyperlink{queue_8h_af694d7a76dfc6fc2381a9cd782c9a2e6}{change\+\_\+floor\+\_\+nr} ()
+\begin{DoxyCompactList}\small\item\em Modify {\ttfamily floor\+\_\+nr} to desired value after the elevator has been stopped between floors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module for keeping track of tasks and modifying tasks. 
+
+
+
+\subsection{Function Documentation}
+\index{queue.\+h@{queue.\+h}!add\+\_\+task@{add\+\_\+task}}
+\index{add\+\_\+task@{add\+\_\+task}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{add\+\_\+task(int button, int floor)}{add_task(int button, int floor)}}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+task (
+\begin{DoxyParamCaption}
+\item[{int}]{button, }
+\item[{int}]{floor}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a7e8b321b568c225ff89208d2fdf5e46b}{}\label{queue_8h_a7e8b321b568c225ff89208d2fdf5e46b}
+
+
+Add task to {\ttfamily task\+\_\+array}. Being used in {\ttfamily \hyperlink{queue_8h_a1c0677670085fd2ccdb7f472d3ff140d}{check\+\_\+buttons\+\_\+and\+\_\+add\+\_\+tasks()}}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em button} & Pressed button. Up, down or floor button. \\
+\hline
+\mbox{\tt in}  & {\em floor} & Floor. \\
+\hline
+\mbox{\tt out}  & {\em task\+\_\+array\mbox{[}$\,$\mbox{]}} & Array of tasks. {\ttfamily \hyperlink{queue_8h_a7e8b321b568c225ff89208d2fdf5e46b}{add\+\_\+task()}} sets corresponding element to 1. \\
+\hline
+\end{DoxyParams}
+\index{queue.\+h@{queue.\+h}!change\+\_\+dir@{change\+\_\+dir}}
+\index{change\+\_\+dir@{change\+\_\+dir}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{change\+\_\+dir()}{change_dir()}}]{\setlength{\rightskip}{0pt plus 5cm}void change\+\_\+dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a960dbfe914856306cd3143f297ea101c}{}\label{queue_8h_a960dbfe914856306cd3143f297ea101c}
+
+
+Reverse {\ttfamily prev\+\_\+dir}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em prev\+\_\+dir} & Previous direction. \\
+\hline
+\end{DoxyParams}
+\index{queue.\+h@{queue.\+h}!change\+\_\+floor\+\_\+nr@{change\+\_\+floor\+\_\+nr}}
+\index{change\+\_\+floor\+\_\+nr@{change\+\_\+floor\+\_\+nr}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{change\+\_\+floor\+\_\+nr()}{change_floor_nr()}}]{\setlength{\rightskip}{0pt plus 5cm}void change\+\_\+floor\+\_\+nr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_af694d7a76dfc6fc2381a9cd782c9a2e6}{}\label{queue_8h_af694d7a76dfc6fc2381a9cd782c9a2e6}
+
+
+Modify {\ttfamily floor\+\_\+nr} to desired value after the elevator has been stopped between floors. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em prev\+\_\+dir} & Previous direction. \\
+\hline
+\mbox{\tt out}  & {\em floor\+\_\+nr} & Floor number last detected by floor sensore. \\
+\hline
+\end{DoxyParams}
+\index{queue.\+h@{queue.\+h}!check\+\_\+buttons\+\_\+and\+\_\+add\+\_\+tasks@{check\+\_\+buttons\+\_\+and\+\_\+add\+\_\+tasks}}
+\index{check\+\_\+buttons\+\_\+and\+\_\+add\+\_\+tasks@{check\+\_\+buttons\+\_\+and\+\_\+add\+\_\+tasks}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{check\+\_\+buttons\+\_\+and\+\_\+add\+\_\+tasks()}{check_buttons_and_add_tasks()}}]{\setlength{\rightskip}{0pt plus 5cm}void check\+\_\+buttons\+\_\+and\+\_\+add\+\_\+tasks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a1c0677670085fd2ccdb7f472d3ff140d}{}\label{queue_8h_a1c0677670085fd2ccdb7f472d3ff140d}
+
+
+Check elevator buttons. Calling {\ttfamily \hyperlink{queue_8h_a7e8b321b568c225ff89208d2fdf5e46b}{add\+\_\+task()}} if active. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em task\+\_\+array\mbox{[}$\,$\mbox{]}} & Array of tasks. 12 elements. 0 if inactive, 1 if active. \\
+\hline
+\end{DoxyParams}
+\index{queue.\+h@{queue.\+h}!continue\+\_\+dir@{continue\+\_\+dir}}
+\index{continue\+\_\+dir@{continue\+\_\+dir}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{continue\+\_\+dir()}{continue_dir()}}]{\setlength{\rightskip}{0pt plus 5cm}int continue\+\_\+dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a137b26aacc4a64a506e45efa8f942754}{}\label{queue_8h_a137b26aacc4a64a506e45efa8f942754}
+
+
+Determine the direction of the elevator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em prev\+\_\+dir} & Previous direction. \\
+\hline
+\mbox{\tt in}  & {\em task\+\_\+array\mbox{[}$\,$\mbox{]}} & Array of tasks. 12 elements. Inactive \+: 0, Active \+: 1.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the elevator has to continue in the same direction, 0 if it has to change direction. 
+\end{DoxyReturn}
+\index{queue.\+h@{queue.\+h}!get\+\_\+floor\+\_\+nr@{get\+\_\+floor\+\_\+nr}}
+\index{get\+\_\+floor\+\_\+nr@{get\+\_\+floor\+\_\+nr}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+floor\+\_\+nr()}{get_floor_nr()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+floor\+\_\+nr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a2ab1d7cd022fc0ac5b93ee94264998bd}{}\label{queue_8h_a2ab1d7cd022fc0ac5b93ee94264998bd}
+
+
+Get function for {\ttfamily floor\+\_\+nr}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em floor\+\_\+nr} & Floor number last detected by floor sensore.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily floor\+\_\+nr}. An integer corresponding to the floor. 
+\end{DoxyReturn}
+\index{queue.\+h@{queue.\+h}!get\+\_\+prev\+\_\+dir@{get\+\_\+prev\+\_\+dir}}
+\index{get\+\_\+prev\+\_\+dir@{get\+\_\+prev\+\_\+dir}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+prev\+\_\+dir()}{get_prev_dir()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+prev\+\_\+dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a923a714ea188455304b44f66af04dba4}{}\label{queue_8h_a923a714ea188455304b44f66af04dba4}
+
+
+Get function for {\ttfamily prev\+\_\+dir}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em prev\+\_\+dir} & Previous direction.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily prev\+\_\+dir}. 1 for up. -\/1 for down. 
+\end{DoxyReturn}
+\index{queue.\+h@{queue.\+h}!is\+\_\+there\+\_\+task@{is\+\_\+there\+\_\+task}}
+\index{is\+\_\+there\+\_\+task@{is\+\_\+there\+\_\+task}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{is\+\_\+there\+\_\+task()}{is_there_task()}}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+there\+\_\+task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a5421b51bf8e1ea44f3fbe79fb5f48a82}{}\label{queue_8h_a5421b51bf8e1ea44f3fbe79fb5f48a82}
+
+
+Determine if there are any tasks in {\ttfamily task\+\_\+array}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em task\+\_\+array\mbox{[}$\,$\mbox{]}} & Array of tasks. 12 elements. Inactive \+: 0, Active \+: 1.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if {\ttfamily task\+\_\+array} is empty. 1 otherwise. 
+\end{DoxyReturn}
+\index{queue.\+h@{queue.\+h}!print\+\_\+task\+\_\+array@{print\+\_\+task\+\_\+array}}
+\index{print\+\_\+task\+\_\+array@{print\+\_\+task\+\_\+array}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{print\+\_\+task\+\_\+array()}{print_task_array()}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+task\+\_\+array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a9736d1517a32583f72bb19a81715d23e}{}\label{queue_8h_a9736d1517a32583f72bb19a81715d23e}
+
+
+Print task array with tab between elements. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em task\+\_\+array\mbox{[}$\,$\mbox{]}} & Array of tasks. 12 elements. Inactive \+: 0, Active \+: 1. \\
+\hline
+\end{DoxyParams}
+\index{queue.\+h@{queue.\+h}!remove\+\_\+all\+\_\+tasks@{remove\+\_\+all\+\_\+tasks}}
+\index{remove\+\_\+all\+\_\+tasks@{remove\+\_\+all\+\_\+tasks}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{remove\+\_\+all\+\_\+tasks()}{remove_all_tasks()}}]{\setlength{\rightskip}{0pt plus 5cm}void remove\+\_\+all\+\_\+tasks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_ac42ac5b8cfc41aec536ff59619ddf448}{}\label{queue_8h_ac42ac5b8cfc41aec536ff59619ddf448}
+
+
+Remove all tasks in {\ttfamily task\+\_\+array}, by setting the elements to 0. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em task\+\_\+array\mbox{[}$\,$\mbox{]}} & Array of tasks. 12 elements. Inactive \+: 0, Active \+: 1. \\
+\hline
+\end{DoxyParams}
+\index{queue.\+h@{queue.\+h}!remove\+\_\+tasks\+\_\+at\+\_\+floor@{remove\+\_\+tasks\+\_\+at\+\_\+floor}}
+\index{remove\+\_\+tasks\+\_\+at\+\_\+floor@{remove\+\_\+tasks\+\_\+at\+\_\+floor}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{remove\+\_\+tasks\+\_\+at\+\_\+floor(int floor)}{remove_tasks_at_floor(int floor)}}]{\setlength{\rightskip}{0pt plus 5cm}void remove\+\_\+tasks\+\_\+at\+\_\+floor (
+\begin{DoxyParamCaption}
+\item[{int}]{floor}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_afd2439d4234c24ac3550d429378f2c3d}{}\label{queue_8h_afd2439d4234c24ac3550d429378f2c3d}
+
+
+Remove all tasks at certain floor from {\ttfamily task\+\_\+array}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em floor} & Floor. \\
+\hline
+\mbox{\tt out}  & {\em task\+\_\+array\mbox{[}$\,$\mbox{]}} & Array of tasks. 12 elements. Inactive \+: 0, Active \+: 1. \\
+\hline
+\end{DoxyParams}
+\index{queue.\+h@{queue.\+h}!set\+\_\+floor\+\_\+nr@{set\+\_\+floor\+\_\+nr}}
+\index{set\+\_\+floor\+\_\+nr@{set\+\_\+floor\+\_\+nr}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+floor\+\_\+nr(int floor)}{set_floor_nr(int floor)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+floor\+\_\+nr (
+\begin{DoxyParamCaption}
+\item[{int}]{floor}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a9c94a3c265ef73681171a20500b07feb}{}\label{queue_8h_a9c94a3c265ef73681171a20500b07feb}
+
+
+Set function for {\ttfamily floor\+\_\+nr}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em floor\+\_\+nr} & Floor number last detected by floor sensore. \\
+\hline
+\end{DoxyParams}
+\index{queue.\+h@{queue.\+h}!set\+\_\+prev\+\_\+dir@{set\+\_\+prev\+\_\+dir}}
+\index{set\+\_\+prev\+\_\+dir@{set\+\_\+prev\+\_\+dir}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+prev\+\_\+dir(int dir)}{set_prev_dir(int dir)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+prev\+\_\+dir (
+\begin{DoxyParamCaption}
+\item[{int}]{dir}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a727673b7363d8564b435ab8186eea7e3}{}\label{queue_8h_a727673b7363d8564b435ab8186eea7e3}
+
+
+Set function for {\ttfamily prev\+\_\+dir}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em prev\+\_\+dir} & Previous direction. \\
+\hline
+\end{DoxyParams}
+\index{queue.\+h@{queue.\+h}!stop\+\_\+at\+\_\+floor@{stop\+\_\+at\+\_\+floor}}
+\index{stop\+\_\+at\+\_\+floor@{stop\+\_\+at\+\_\+floor}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{stop\+\_\+at\+\_\+floor(int floor\+\_\+numb)}{stop_at_floor(int floor_numb)}}]{\setlength{\rightskip}{0pt plus 5cm}int stop\+\_\+at\+\_\+floor (
+\begin{DoxyParamCaption}
+\item[{int}]{floor\+\_\+numb}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_a8abae8e750bef901dff7d007d5b460b1}{}\label{queue_8h_a8abae8e750bef901dff7d007d5b460b1}
+
+
+Determine if the elevator have to stop at a given floor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em floor\+\_\+numb} & The floor number if elevator is at floor. floor\+\_\+numb is -\/1 if not at floor. \\
+\hline
+\mbox{\tt out}  & {\em prev\+\_\+dir} & Previous direction.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the elevator has to stop at the given floor. 0 otherwise. 
+\end{DoxyReturn}
+\index{queue.\+h@{queue.\+h}!task\+\_\+at\+\_\+floor@{task\+\_\+at\+\_\+floor}}
+\index{task\+\_\+at\+\_\+floor@{task\+\_\+at\+\_\+floor}!queue.\+h@{queue.\+h}}
+\subsubsection[{\texorpdfstring{task\+\_\+at\+\_\+floor()}{task_at_floor()}}]{\setlength{\rightskip}{0pt plus 5cm}int task\+\_\+at\+\_\+floor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{queue_8h_ad3458686a338b0a5e1aa28a087fcd1fa}{}\label{queue_8h_ad3458686a338b0a5e1aa28a087fcd1fa}
+
+
+Are there any tasks on the floor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em floor\+\_\+nr} & Floor number last detected by floor sensor. \\
+\hline
+\mbox{\tt in}  & {\em task\+\_\+array} & Array of tasks. 12 elements. Inactive \+: 0, Active \+: 1.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there are one or more tasks at current floor. 0 otherwise. 
+\end{DoxyReturn}

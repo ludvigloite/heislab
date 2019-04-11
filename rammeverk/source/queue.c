@@ -21,9 +21,9 @@ void check_buttons_and_add_tasks(){
 }
 
 void add_task(int button, int floor){
-	int diff = 0; //hvis det er knapp i heis
-	if (button==0){diff=1;} //up
-	else if (button==1){diff=2;} //down
+	int diff = 0; //add 1 for up  button and 2 for down button.
+	if (button==0){diff=1;} 
+	else if (button==1){diff=2;} 
 	task_array[floor*3+diff]=1;
 	elev_set_button_lamp(button,floor,1);
 }
@@ -32,7 +32,7 @@ void remove_tasks_at_floor(int floor){
 	if (floor!=-1){
 		for (int c = 0; c<3; c++){
 			task_array[floor*3+c]=0;
-
+			
 			if (!((c==0 && floor ==3) || (c==1 && floor==0))){
 				elev_set_button_lamp(c,floor,0);
 			}	

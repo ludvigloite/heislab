@@ -24,7 +24,7 @@ int init_total_elev(){
         printf("Unable to initialize elevator to floor!\n");
         return 0;
     }
-    timer_init(); //kan ikke gå feil..trenger ikke if...
+    timer_init(); //Cannot fail, so we do not need if statement.
     printf("Elevator initialized\n");
     return 1;
 }

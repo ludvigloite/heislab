@@ -1,0 +1,62 @@
+\hypertarget{elevController_8h}{}\section{source/elev\+Controller.h File Reference}
+\label{elevController_8h}\index{source/elev\+Controller.\+h@{source/elev\+Controller.\+h}}
+
+
+Module for initializing the elevator.  
+
+
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}elev.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\\*
+Include dependency graph for elev\+Controller.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{elevController_8h_af1012fd9572f75e0bd48c10a12bff464}{floor\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Check if the elevator is at a floor. If not, move down until the elevator is at a floor. \end{DoxyCompactList}\item 
+int \hyperlink{elevController_8h_a3bb4bd9dcb1f0f2250c8e03870b7439c}{init\+\_\+total\+\_\+elev} ()
+\begin{DoxyCompactList}\small\item\em Initialising the elevator. Calls {\ttfamily elev\+\_\+init}, {\ttfamily floor\+\_\+init} and {\ttfamily timer\+\_\+init}. The elevator ends up at a defined state, where we know what floor it is at. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Module for initializing the elevator. 
+
+
+
+\subsection{Function Documentation}
+\index{elev\+Controller.\+h@{elev\+Controller.\+h}!floor\+\_\+init@{floor\+\_\+init}}
+\index{floor\+\_\+init@{floor\+\_\+init}!elev\+Controller.\+h@{elev\+Controller.\+h}}
+\subsubsection[{\texorpdfstring{floor\+\_\+init()}{floor_init()}}]{\setlength{\rightskip}{0pt plus 5cm}int floor\+\_\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{elevController_8h_af1012fd9572f75e0bd48c10a12bff464}{}\label{elevController_8h_af1012fd9572f75e0bd48c10a12bff464}
+
+
+Check if the elevator is at a floor. If not, move down until the elevator is at a floor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em prev\+\_\+dir} & Previous direction.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on succes. 0 otherwise. 
+\end{DoxyReturn}
+\index{elev\+Controller.\+h@{elev\+Controller.\+h}!init\+\_\+total\+\_\+elev@{init\+\_\+total\+\_\+elev}}
+\index{init\+\_\+total\+\_\+elev@{init\+\_\+total\+\_\+elev}!elev\+Controller.\+h@{elev\+Controller.\+h}}
+\subsubsection[{\texorpdfstring{init\+\_\+total\+\_\+elev()}{init_total_elev()}}]{\setlength{\rightskip}{0pt plus 5cm}int init\+\_\+total\+\_\+elev (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{elevController_8h_a3bb4bd9dcb1f0f2250c8e03870b7439c}{}\label{elevController_8h_a3bb4bd9dcb1f0f2250c8e03870b7439c}
+
+
+Initialising the elevator. Calls {\ttfamily elev\+\_\+init}, {\ttfamily floor\+\_\+init} and {\ttfamily timer\+\_\+init}. The elevator ends up at a defined state, where we know what floor it is at. 
+
+\begin{DoxyReturn}{Returns}
+1 on succes. 0 otherwise. 
+\end{DoxyReturn}
