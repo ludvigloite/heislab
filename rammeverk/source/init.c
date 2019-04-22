@@ -2,8 +2,6 @@
 #include <stdio.h>
 
 
-extern int task_array[];
-
 int floor_init(){
 	set_prev_dir(DIRN_DOWN);
 	while(elev_get_floor_sensor_signal()<0){

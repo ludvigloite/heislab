@@ -15,7 +15,7 @@ int main() {
   //The elevator initializes
 	int state=0;
 	int floor_number=0;
-  int stopped=0; //flag: 1 if STOP button has been pressed. Is set to 0 after first iteration in ACTIVE. Assures correct behaviour when stopped between floors.
+  	int stopped=0; //flag: 1 if STOP button has been pressed. Is set to 0 after first iteration in ACTIVE. Assures correct behaviour when stopped between floors.
 
 	enum STATES{
 		IDLE,
