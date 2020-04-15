@@ -1,7 +1,7 @@
 # Single Elevator
 
 This repositery includes the code for a single elevator, and was made in the course **TTK4235 - Tilpassede Datasystemer**.
-It was made in 2019.
+It was made in 2019. See [this project](https://github.com/ludvigloite/sanntid) for code for three elevators communicating over internet and working together.
 
 ## Implementations
 Fully working elevator with 4 floors. Easily scalable. Includes:
